@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-gits-side-menu-header',
@@ -6,4 +7,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './gits-side-menu-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GitsSideMenuHeaderComponent { }
+export class GitsSideMenuHeaderComponent {
+  
+  envs = environment;
+
+}
