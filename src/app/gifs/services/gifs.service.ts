@@ -13,6 +13,7 @@ export class GifsService {
   private http = inject(HttpClient)
   
   trendinGifs = signal<Gif[]>([]);
+  tredingGifsLoading = signal(true);
 
   constructor(){
     this.loadTrendingGifs()
@@ -27,6 +28,7 @@ export class GifsService {
     }).subscribe( (resp)  => {
       const gifs = GifMapper.mapGiphyItemsToGifArray(resp.data);
       this.trendinGifs.set(gifs);
+      this.tredingGifsLoading.set(false);
       console.log(gifs)
     });
 
