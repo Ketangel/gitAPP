@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { MenuOption } from '../../../interfaces/menu-option.interfaces';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { GifsService } from '../../../services/gifs.service';
 
 @Component({
   selector: 'app-gits-side-menu-options',
@@ -10,6 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class GitsSideMenuOptionsComponent { 
 
+  gifServices = inject(GifsService);
 
   menuOptions: MenuOption[] = [
     {
